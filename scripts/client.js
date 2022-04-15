@@ -3,7 +3,7 @@ $(document).ready(readyNow);
 function readyNow(){
     //click handlers
     $('#addEmployeeButton').on('click', addEmployee);
-    $('#tbody').on('click', '#deleteEmployeeButton', deleteEmployee);
+    $('#tbody').on('click', '.deleteEmployeeButton', deleteEmployee);
 }
 
 const employees = [];
@@ -33,7 +33,7 @@ function addEmployee(){
 }
 
 function addToTable(){
-    console.log('in add to table');
+    // console.log('in add to table');
     let allSalaries = 0;
     //empty table body
     let el = $('#tbody');
@@ -47,7 +47,7 @@ function addToTable(){
             <td>${employees[i].id}</td>
             <td>${employees[i].title}</td>
             <td>${employees[i].salary}</td>
-            <td><button id="deleteEmployeeButton">Delete</button></td></tr>`)
+            <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td></tr>`)
         //add salary to allSalaries
         allSalaries += Number(employees[i].salary);
     }
@@ -56,7 +56,7 @@ function addToTable(){
 }
 
 function displayCost(allSalaries){
-    // console.log('allSalaries:', allSalaries);
+    // console.log('in displayCost, allSalaries:', allSalaries);
     let el = $('#totalMonthly');
     el.empty();
     //calculate monthly cost from annual and display on DOM
@@ -72,9 +72,12 @@ function displayCost(allSalaries){
 
 function deleteEmployee(){
     //remove employee from array**stretch goal****
+    // console.log($(this).data('index'));
+    //remove from employees array
+    employees.splice($(this).data('index'), 1);
+    //call addToTable to display modified array on DOM and trigger new monthly calculation
+    addToTable();
     
-    //remove employee from table display
-    $(this).parent().parent().fadeOut(200);//not sure if this is best, but it works
-    
-
+    //*****remove employee from table display (base mode)*****
+    // $(this).parent().parent().remove();
 }
