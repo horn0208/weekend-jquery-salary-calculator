@@ -3,6 +3,7 @@ $(document).ready(readyNow);
 function readyNow(){
     //click handlers
     $('#addEmployeeButton').on('click', addEmployee);
+    $('#tbody').on('click', '#deleteEmployeeButton', deleteEmployee);
 }
 
 const employees = [];
@@ -45,7 +46,8 @@ function addToTable(){
             <td>${employees[i].last}</td>
             <td>${employees[i].id}</td>
             <td>${employees[i].title}</td>
-            <td>${employees[i].salary}</td></tr>`)
+            <td>${employees[i].salary}</td>
+            <td><button id="deleteEmployeeButton">Delete</button></td></tr>`)
         //add salary to allSalaries
         allSalaries += Number(employees[i].salary);
     }
@@ -59,12 +61,20 @@ function displayCost(allSalaries){
     el.empty();
     //calculate monthly cost from annual and display on DOM
     let monthly = (allSalaries/12).toFixed(2);
-    el.append(monthly);
+    el.append(`$${monthly}`);
     // turn monthly cost display red if exceeds 20K
     if (monthly > 20000) {
         el.css('background-color', 'red');
     } else {
         el.css('background-color', 'white');
     }
+}
+
+function deleteEmployee(){
+    //remove employee from array**stretch goal****
     
+    //remove employee from table display
+    $(this).parent().parent().fadeOut(200);//not sure if this is best, but it works
+    
+
 }
