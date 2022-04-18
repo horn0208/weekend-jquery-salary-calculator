@@ -21,7 +21,7 @@ Once the employee is deleted, update the _Total Monthly Cost_ section on the pag
 
 ## Description
 
-This application is a salary calculator that totals up the monthly cost of employee salaries, and makes it clear when the monthly budget is exceeded. The user can submit the following information for each employee: first name, last name, ID number, job title, and annual salary. That information for each employee is displayed in a table, and the 
+This application is a salary calculator that totals up the monthly cost of employee salaries, and makes it clear when the monthly budget is exceeded. The user can submit the following information for each employee: first name, last name, ID number, job title, and annual salary. That information for each employee is displayed in a table, and the total monthly cost of all the employees' salaries is displayed on the bottom right. If the budget of $20,000 is exceeded, the background color of the total monthly cost appears red.
 
 ## Screen Shot
 ![Wireframe](screen-shot.png)
