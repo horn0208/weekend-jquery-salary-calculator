@@ -23,10 +23,6 @@ Once the employee is deleted, update the _Total Monthly Cost_ section on the pag
 
 This application is a salary calculator that totals up the monthly cost of employee salaries, and makes it clear when the monthly budget is exceeded. The user can submit the following information for each employee: first name, last name, ID number, job title, and annual salary. That information for each employee is displayed in a table, and the 
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
-
 ## Screen Shot
 ![Wireframe](screen-shot.png)
 
