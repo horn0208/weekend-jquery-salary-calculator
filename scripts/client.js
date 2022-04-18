@@ -46,8 +46,10 @@ function addToTable(){
             <td>${employees[i].last}</td>
             <td>${employees[i].id}</td>
             <td>${employees[i].title}</td>
-            <td>${employees[i].salary}</td>
+            <td>$${employees[i].salary}</td>
             <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td></tr>`)
+        //make background color darker in odd-numbered rows of table body
+        $('#tbody tr:odd').css('background-color', '#19657e3a');
         //add salary to allSalaries
         allSalaries += Number(employees[i].salary);
     }
@@ -66,7 +68,7 @@ function displayCost(allSalaries){
     if (monthly > 20000) {
         el.css('background-color', 'red');
     } else {
-        el.css('background-color', 'white');
+        el.css('background-color', '#F9F8F8');
     }
 }
 
